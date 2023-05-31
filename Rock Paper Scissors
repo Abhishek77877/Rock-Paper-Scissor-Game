@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+//ROCK PAPER SCISSOR GAME SIMULATOR
+void main()
+{   int yp=0,cp=0,ch=1,pl=0,comp=0;
+    printf("\nHit 10 points to WIN!\n");
+    while(ch==1)
+    {   printf("\nPick 1.Rock 2.Paper 3.Scissor\n");
+        scanf("%d",&pl);
+        comp=(rand()%3)+1;
+        switch(comp)
+        {   case 1:
+                printf("Computer threw Rock\n");
+                switch(pl)
+                {   case 1:
+                        printf("Draw");
+                        break;
+                    case 2:
+                        printf("You win!");
+                        yp++;
+                        break;
+                    case 3:
+                        printf("You lose!");
+                        cp++;
+                        break;
+                    default:
+                        printf("Invalid input");
+                        break;
+                }
+                break;
+                
+            case 2:
+                printf("Computer threw Paper\n");
+                switch(pl)
+                {   case 2:
+                        printf("Draw");
+                        break;
+                    case 3:
+                        printf("You win!");
+                        yp++;
+                        break;
+                    case 1:
+                        printf("You lose!");
+                        cp++;
+                        break;
+                    default:
+                        printf("Invalid input");
+                        break;
+                }
+                break;
+                
+            case 3:
+                printf("Computer threw Scissor\n");
+                switch(pl)
+                {   case 3:
+                        printf("Draw");
+                        break;
+                    case 1:
+                        printf("You win!");
+                        yp++;
+                        break;
+                    case 2:
+                        printf("You lose!");
+                        cp++;
+                        break;
+                    default:
+                        printf("Invalid input");
+                        break;
+                }
+                break;
+            default:
+                printf("Computer error");
+                break;
+        }
+        printf("\nYour points=%d",yp);
+        printf("\nComputer points=%d",cp);
+        if(yp==10)
+        {   printf("\nYOU WIN THE GAME!\n");
+            printf("Play Again? 1.Yes 2.No");
+            scanf("%d",&ch);
+        }
+        if(cp==10)
+        {   printf("\nYOU LOSE THE GAME!\n");
+            printf("Play Again? 1.Yes 2.No");
+            scanf("%d",&ch);
+        }
+    }
+}
+        
+        
+        
+    
